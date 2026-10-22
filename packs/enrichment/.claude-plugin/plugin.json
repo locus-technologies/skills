@@ -1,0 +1,13 @@
+{
+  "name": "enrichment",
+  "displayName": "Enrichment",
+  "version": "0.1.0",
+  "description": "Build account lists, find exact role holders, get verified work emails, and research accounts with pay-per-use APIs.",
+  "author": { "name": "Locus", "url": "https://paywithlocus.com" },
+  "homepage": "https://github.com/locus-technologies/skills/tree/main/packs/enrichment",
+  "repository": "https://github.com/locus-technologies/skills",
+  "license": "MIT",
+  "keywords": ["enrichment", "gtm", "sales", "prospecting", "locus"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}

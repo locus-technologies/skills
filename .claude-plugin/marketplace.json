@@ -1,0 +1,19 @@
+{
+  "name": "locus-skills",
+  "owner": {
+    "name": "Locus",
+    "url": "https://github.com/locus-technologies"
+  },
+  "description": "Skill packs that replace SaaS tools with your coding agent and pay-per-use Locus APIs",
+  "plugins": [
+    {
+      "name": "enrichment",
+      "displayName": "Enrichment",
+      "description": "Build account lists, find exact role holders, get verified work emails, and research accounts with pay-per-use APIs.",
+      "category": "productivity",
+      "keywords": ["enrichment", "gtm", "sales", "prospecting", "email-finder", "locus"],
+      "source": "./packs/enrichment",
+      "homepage": "https://github.com/locus-technologies/skills/tree/main/packs/enrichment"
+    }
+  ]
+}

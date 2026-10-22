@@ -1,0 +1,30 @@
+{
+  "schema_version": "1",
+  "runtime": "locus-typescript-1",
+  "bindings": {
+    "companyEnrich": {
+      "slug": "hunter/company-enrichment",
+      "kind": "tool",
+      "contract_digest": "43ce68af736a0a7c611558521f5cffe340188bd07c9b06e480175203a8f4ec84",
+      "contract_revision": "43ce68af736a0a7c611558521f5cffe340188bd07c9b06e480175203a8f4ec84"
+    },
+    "newsSearch": {
+      "slug": "brave/news-search",
+      "kind": "tool",
+      "contract_digest": "4080384809bf941615aa1697429cc6b10f7265def131fe6e0a68363160304585",
+      "contract_revision": "4080384809bf941615aa1697429cc6b10f7265def131fe6e0a68363160304585"
+    },
+    "apolloOrg": {
+      "slug": "apollo/org-enrichment",
+      "kind": "tool",
+      "contract_digest": "f79e81096788235232dce69cba3ad6d5859a93434aee319e480a093be88a370f",
+      "contract_revision": "f79e81096788235232dce69cba3ad6d5859a93434aee319e480a093be88a370f"
+    },
+    "jobPostings": {
+      "slug": "apollo/job-postings",
+      "kind": "tool",
+      "contract_digest": "a819ab9a83823d1e9f42eeebe55543b27c4faca6fa88d49271f172e2dd170d04",
+      "contract_revision": "a819ab9a83823d1e9f42eeebe55543b27c4faca6fa88d49271f172e2dd170d04"
+    }
+  }
+}

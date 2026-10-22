@@ -1,0 +1,24 @@
+{
+  "schema_version": "1",
+  "runtime": "locus-typescript-1",
+  "bindings": {
+    "find": {
+      "slug": "hunter/email-finder",
+      "kind": "tool",
+      "contract_digest": "1813d63afad6b3e03b210661ca06ef4ec0a56155c79544e5a11310a59c244c99",
+      "contract_revision": "1813d63afad6b3e03b210661ca06ef4ec0a56155c79544e5a11310a59c244c99"
+    },
+    "verify": {
+      "slug": "hunter/email-verifier",
+      "kind": "tool",
+      "contract_digest": "e400d2caa527582ba83c9bad868f18224bbeb3df6543ee65ce7a45dd993dc494",
+      "contract_revision": "e400d2caa527582ba83c9bad868f18224bbeb3df6543ee65ce7a45dd993dc494"
+    },
+    "apollo": {
+      "slug": "apollo/people-enrichment",
+      "kind": "tool",
+      "contract_digest": "0a735278be360a02f501c0e5e4d67a258a271d5d9e9230340dfc53abc8d249e7",
+      "contract_revision": "0a735278be360a02f501c0e5e4d67a258a271d5d9e9230340dfc53abc8d249e7"
+    }
+  }
+}

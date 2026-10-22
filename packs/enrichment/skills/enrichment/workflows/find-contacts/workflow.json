@@ -1,0 +1,17 @@
+{
+  "schema_version": "1",
+  "name": "find-contacts",
+  "entrypoint": "workflow.ts",
+  "runtime": "locus-typescript-1",
+  "effects": ["locus.read"],
+  "bindings": [
+    {
+      "name": "domainSearch",
+      "slug": "hunter/domain-search",
+      "kind": "tool",
+      "contract_digest": "6cfb820282a900fa22e5f4f5569c87460c95174bc9a21344b2d063f2ad1e2416",
+      "contract_revision": "6cfb820282a900fa22e5f4f5569c87460c95174bc9a21344b2d063f2ad1e2416",
+      "effects": ["locus.read"]
+    }
+  ]
+}

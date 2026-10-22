@@ -1,0 +1,51 @@
+{
+  "pack": "enrichment",
+  "notes": "Each task runs in a fresh project with only this pack installed and a Locus MCP connection. Checks are in checks.mjs. Ground truth was written by hand from public company pages, not from the pack's own output.",
+  "tasks": [
+    {
+      "id": "ceo-emails",
+      "budget_credits": 1200,
+      "prompt": "Find the CEO of each of these companies and their verified work email: linear.app, vercel.com, posthog.com, supabase.com, resend.com, retool.com, airtable.com, railway.com. Save the result to ceos.csv with columns domain, name, title, email. Leave name and email empty for any company where you can't find the CEO; don't guess.",
+      "truth": {
+        "linear.app": ["Karri Saarinen"],
+        "vercel.com": ["Guillermo Rauch"],
+        "posthog.com": ["James Hawkins", "Tim Glaser"],
+        "supabase.com": ["Paul Copplestone"],
+        "resend.com": ["Zeno Rocha"],
+        "retool.com": ["David Hsu"],
+        "airtable.com": ["Howie Liu"],
+        "railway.com": ["Jake Cooper"]
+      },
+      "min_correct": 5
+    },
+    {
+      "id": "exact-role",
+      "budget_credits": 600,
+      "prompt": "Find the VP of Sales at linear.app, vercel.com, posthog.com, retool.com, and notion.so, with verified work emails. If a company doesn't have someone with exactly that title, leave that row blank; don't substitute a different title like Head of Sales or CRO. Save to vp-sales.csv with columns domain, name, title, email."
+    },
+    {
+      "id": "waterfall",
+      "budget_credits": 1000,
+      "prompt": "I have this list of people. Find each person's verified work email and save the results to emails.csv with columns name, domain, email, status. Don't include an email unless it's verified.\n\nname,domain\nKarri Saarinen,linear.app\nGuillermo Rauch,vercel.com\nJames Hawkins,posthog.com\nPaul Copplestone,supabase.com\nZeno Rocha,resend.com\nHowie Liu,airtable.com\nQuentin Fabricated,linear.app\nMarisol Notarealperson,vercel.com",
+      "real": ["Karri Saarinen", "Guillermo Rauch", "James Hawkins", "Paul Copplestone", "Zeno Rocha", "Howie Liu"],
+      "fake": ["Quentin Fabricated", "Marisol Notarealperson"],
+      "min_found": 4
+    },
+    {
+      "id": "account-research",
+      "budget_credits": 1200,
+      "prompt": "Research these companies for me: linear.app, vercel.com, posthog.com, supabase.com, resend.com. For each one I want headcount, latest funding round, total raised, notable tech, and anything newsworthy from the last month. Write a short brief per company to accounts.md and cite a source URL for any news."
+    },
+    {
+      "id": "list-build",
+      "budget_credits": 2500,
+      "prompt": "Build me a list of 15 US-headquartered B2B software companies with 51-200 employees that use Stripe. For each, include headcount, latest funding round and date, and total raised. Rank them by most recent funding. Save to accounts.csv."
+    },
+    {
+      "id": "no-connection",
+      "budget_credits": 0,
+      "no_mcp": true,
+      "prompt": "Find the CEO and their work email at linear.app."
+    }
+  ]
+}
