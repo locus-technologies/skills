@@ -1,0 +1,9 @@
+# Eval transcripts and pilot outputs contain real contact data and internal
+# environment details. Keep them local; READMEs carry the measured summary.
+packs/*/evals/runs/
+packs/*/evals/pilots/
+node_modules/
+remotion/out/
+.DS_Store
+# Launch kits are internal until Gate B; they live in the private AgentPay repo.
+packs/*/launch/

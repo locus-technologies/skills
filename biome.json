@@ -1,0 +1,6 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.5/schema.json",
+  "files": { "includes": ["**", "!**/node_modules", "!**/evals/runs", "!**/evals/pilots", "!**/out"] },
+  "formatter": { "indentStyle": "space", "lineWidth": 120 },
+  "javascript": { "formatter": { "quoteStyle": "single" } }
+}
