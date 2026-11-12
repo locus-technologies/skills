@@ -1,0 +1,42 @@
+{
+  "schema_version": "1",
+  "runtime": "locus-typescript-1",
+  "bindings": {
+    "geocode": {
+      "slug": "mapbox/geocode-forward",
+      "kind": "tool",
+      "contract_digest": "e9f8c5c6d12bb1ca3b6a80c0444a57ec773f3b5f6939b2875eb5796e76b407f7",
+      "contract_revision": "e9f8c5c6d12bb1ca3b6a80c0444a57ec773f3b5f6939b2875eb5796e76b407f7"
+    },
+    "rentcast": {
+      "slug": "rentcast/rental-listings",
+      "kind": "tool",
+      "contract_digest": "6432ac164bc1ab7fd2b0c32b26599c43deb895d45fde544cf7755aaab6bab0eb",
+      "contract_revision": "6432ac164bc1ab7fd2b0c32b26599c43deb895d45fde544cf7755aaab6bab0eb"
+    },
+    "craigslist": {
+      "slug": "craigslist/search-listings",
+      "kind": "tool",
+      "contract_digest": "846b5ffd8f5e42cbd33168e2dc56fbb064a244231800690bd162f60899994990",
+      "contract_revision": "846b5ffd8f5e42cbd33168e2dc56fbb064a244231800690bd162f60899994990"
+    },
+    "padmapper": {
+      "slug": "padmapper/search-listings",
+      "kind": "tool",
+      "contract_digest": "846b5ffd8f5e42cbd33168e2dc56fbb064a244231800690bd162f60899994990",
+      "contract_revision": "846b5ffd8f5e42cbd33168e2dc56fbb064a244231800690bd162f60899994990"
+    },
+    "rent": {
+      "slug": "rent/search-listings",
+      "kind": "tool",
+      "contract_digest": "846b5ffd8f5e42cbd33168e2dc56fbb064a244231800690bd162f60899994990",
+      "contract_revision": "846b5ffd8f5e42cbd33168e2dc56fbb064a244231800690bd162f60899994990"
+    },
+    "zillow": {
+      "slug": "zillow/search-homes-for-rent",
+      "kind": "tool",
+      "contract_digest": "846b5ffd8f5e42cbd33168e2dc56fbb064a244231800690bd162f60899994990",
+      "contract_revision": "846b5ffd8f5e42cbd33168e2dc56fbb064a244231800690bd162f60899994990"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "locus-skills",
+  "owner": {
+    "name": "Locus",
+    "url": "https://github.com/locus-technologies"
+  },
+  "description": "Skill packs that replace SaaS tools with your coding agent and pay-per-use Locus APIs",
+  "plugins": [
+    {
+      "name": "apartment-hunt",
+      "displayName": "Apartment Hunt",
+      "description": "Sweep every major rental site at once, get only new listings, and vet a shortlist for scams, market price, San Francisco rent control, and commute.",
+      "category": "productivity",
+      "keywords": ["apartments", "rentals", "housing", "san-francisco", "craigslist", "zillow", "locus"],
+      "source": "./packs/apartment-hunt",
+      "homepage": "https://github.com/locus-technologies/skills/tree/main/packs/apartment-hunt"
+    }
+  ]
+}
