@@ -14,13 +14,14 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # A pull request from anyone outside the Locus org waits here until Wes or
-  # Cole approves it: they are the required reviewers of the external-pr
-  # environment. Org members and collaborators skip straight to the check.
+  # A pull request from a fork (anyone without write access) waits here until
+  # Wes or Cole approves it: they are the required reviewers of the external-pr
+  # environment. Branches pushed to this repo skip straight to the check.
+  # (author_association is no guide: private org members show up as outsiders.)
   approve:
     if: >-
       github.event_name == 'pull_request' &&
-      !contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.pull_request.author_association)
+      github.event.pull_request.head.repo.full_name != github.repository
     runs-on: ubuntu-latest
     environment: external-pr
     steps:

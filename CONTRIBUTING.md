@@ -74,8 +74,8 @@ and read the result, not just the status.
 
 ## What happens next
 
-1. **CI.** For contributors outside the Locus org, CI waits until Wes or Cole
-   approves the run. It never has access to secrets.
+1. **CI.** On a pull request from a fork, CI waits until Wes or Cole approves
+   the run. It never has access to secrets.
 2. **Review.** A maintainer reads the pack and pilots its Workflows.
 3. **Evals.** We run your evals against real agents on Locus stage, check each
    failure against the transcript, and put the measured results and costs in the
