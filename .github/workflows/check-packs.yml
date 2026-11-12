@@ -1,0 +1,46 @@
+name: Check packs
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+# Read-only token; pull requests from forks also get no secrets. Nothing here needs either.
+permissions:
+  contents: read
+
+concurrency:
+  group: check-packs-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # A pull request from anyone outside the Locus org waits here until Wes or
+  # Cole approves it: they are the required reviewers of the external-pr
+  # environment. Org members and collaborators skip straight to the check.
+  approve:
+    if: >-
+      github.event_name == 'pull_request' &&
+      !contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.pull_request.author_association)
+    runs-on: ubuntu-latest
+    environment: external-pr
+    steps:
+      - run: echo "Run approved by a maintainer."
+
+  check:
+    needs: approve
+    if: ${{ !cancelled() && (needs.approve.result == 'success' || needs.approve.result == 'skipped') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Lint and format
+        run: npx --yes @biomejs/biome@2.4.5 ci .
+      - name: Checker tests
+        run: node --test scripts/check-packs.test.mjs
+      - name: Pack format
+        run: node scripts/check-packs.mjs
