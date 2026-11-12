@@ -1,0 +1,13 @@
+{
+  "name": "apartment-hunt",
+  "displayName": "Apartment Hunt",
+  "version": "0.1.0",
+  "description": "Sweep Craigslist, Zillow, PadMapper, Rent.com and MLS listings at once, get only new listings, and vet a shortlist for scams, market price, San Francisco rent control, and commute.",
+  "author": { "name": "Locus", "url": "https://paywithlocus.com" },
+  "homepage": "https://github.com/locus-technologies/skills/tree/main/packs/apartment-hunt",
+  "repository": "https://github.com/locus-technologies/skills",
+  "license": "MIT",
+  "keywords": ["apartments", "rentals", "housing", "san-francisco", "craigslist", "zillow", "locus"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}

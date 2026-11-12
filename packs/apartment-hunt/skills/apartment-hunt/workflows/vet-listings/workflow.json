@@ -1,0 +1,49 @@
+{
+  "schema_version": "1",
+  "name": "vet-listings",
+  "entrypoint": "workflow.ts",
+  "runtime": "locus-typescript-1",
+  "effects": ["locus.read"],
+  "bindings": [
+    {
+      "name": "detail",
+      "slug": "craigslist/get-listing-detail",
+      "kind": "tool",
+      "contract_digest": "846b5ffd8f5e42cbd33168e2dc56fbb064a244231800690bd162f60899994990",
+      "contract_revision": "846b5ffd8f5e42cbd33168e2dc56fbb064a244231800690bd162f60899994990",
+      "effects": ["locus.read"]
+    },
+    {
+      "name": "geocode",
+      "slug": "mapbox/geocode-forward",
+      "kind": "tool",
+      "contract_digest": "e9f8c5c6d12bb1ca3b6a80c0444a57ec773f3b5f6939b2875eb5796e76b407f7",
+      "contract_revision": "e9f8c5c6d12bb1ca3b6a80c0444a57ec773f3b5f6939b2875eb5796e76b407f7",
+      "effects": ["locus.read"]
+    },
+    {
+      "name": "estimate",
+      "slug": "rentcast/rent-estimate",
+      "kind": "tool",
+      "contract_digest": "0e06e19a18187445d5617a8b311f4417043b2516453b2f53f8a7b593f76b7747",
+      "contract_revision": "0e06e19a18187445d5617a8b311f4417043b2516453b2f53f8a7b593f76b7747",
+      "effects": ["locus.read"]
+    },
+    {
+      "name": "property",
+      "slug": "rentcast/properties",
+      "kind": "tool",
+      "contract_digest": "065bf5db4026e7ff8adcd1f4e4e14cafe8116fec492dddb06a38875f42a3c0d7",
+      "contract_revision": "065bf5db4026e7ff8adcd1f4e4e14cafe8116fec492dddb06a38875f42a3c0d7",
+      "effects": ["locus.read"]
+    },
+    {
+      "name": "directions",
+      "slug": "mapbox/directions",
+      "kind": "tool",
+      "contract_digest": "abadaaedf490246d43359d833eb7d56a1cf05385a9c23d0188fe07a3b90340d5",
+      "contract_revision": "abadaaedf490246d43359d833eb7d56a1cf05385a9c23d0188fe07a3b90340d5",
+      "effects": ["locus.read"]
+    }
+  ]
+}

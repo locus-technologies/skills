@@ -1,0 +1,204 @@
+{
+  "pack": "apartment-hunt",
+  "notes": "Each task runs in a fresh project with only this pack installed and a Locus MCP connection. Checks are in checks.mjs. Ground truth: area boundaries from Mapbox (2026-11-11), build years from the San Francisco Assessor roll on DataSF, commute references from Mapbox directions computed outside the pack.",
+  "tasks": [
+    {
+      "id": "sweep",
+      "budget_credits": 900,
+      "prompt": "I'm looking for a 1-bedroom in San Francisco's Mission, Bernal Heights, or Noe Valley, $3,800 a month max. Find what's listed right now across the main rental sites and save it to listings.csv with columns site, title, address, neighborhood, beds, price, url, lat, lng. Leave out anything you can't place in those neighborhoods.",
+      "areas": {
+        "Mission": [-122.425857, 37.747829, -122.402824, 37.770779],
+        "Bernal Heights": [-122.432417, 37.731765, -122.403958, 37.748962],
+        "Noe Valley": [-122.44471, 37.74147, -122.424324, 37.755028]
+      },
+      "max_price": 3800,
+      "beds": 1,
+      "min_rows": 8
+    },
+    {
+      "id": "new-only",
+      "budget_credits": 900,
+      "prompt": "Run my apartment watch (apartment-watch.json) and tell me what's new since last time. Save just the new listings to new.csv with columns site, title, address, price, url.",
+      "files": {
+        "apartment-watch.json": "{\n  \"search\": {\n    \"city\": \"San Francisco\",\n    \"state\": \"CA\",\n    \"beds\": [\n      1\n    ],\n    \"max_price\": 3800,\n    \"areas\": [\n      \"Mission\",\n      \"Bernal Heights\",\n      \"Noe Valley\"\n    ],\n    \"craigslist_site\": \"sfbay.craigslist.org\",\n    \"craigslist_subarea\": \"sfc\"\n  },\n  \"seen\": [\n    \"addr:316 valencia st|1\",\n    \"addr:2023 folsom st|1\",\n    \"addr:151 chenery st|1\",\n    \"addr:380 14th st|1\",\n    \"addr:2230 bryant st|1\",\n    \"addr:3597 mission st|1\",\n    \"addr:1863 mission st|1\",\n    \"addr:959 capp st|1\",\n    \"addr:266 san jose ave|1\",\n    \"addr:1476 valencia st|1\",\n    \"addr:2571 mission st|1\",\n    \"addr:116 coleridge st|1\",\n    \"addr:10 college ave|1\",\n    \"addr:865 san jose ave|1\",\n    \"addr:3420 18th st|1\",\n    \"craigslist:7998683244|1\",\n    \"craigslist:7990796793|1\",\n    \"craigslist:7998649947|1\",\n    \"craigslist:7998644766|1\",\n    \"craigslist:7998670380|1\",\n    \"craigslist:7998657663|1\",\n    \"craigslist:7994752620|1\"\n  ],\n  \"runs\": [\n    {\n      \"at\": \"2026-11-11T02:12:37Z\",\n      \"new\": 22,\n      \"credits\": 549\n    }\n  ]\n}\n"
+      },
+      "seen_listings": [
+        {
+          "key": "addr:316 valencia st|1",
+          "url": "https://www.zillow.com/apartments/san-francisco-ca/316-valencia-st/CpfCy9/",
+          "address": "316 Valencia St #2a1f3d265, San Francisco, CA 94103"
+        },
+        {
+          "key": "addr:2023 folsom st|1",
+          "url": null,
+          "address": "2023 Folsom St, San Francisco, CA 94110"
+        },
+        {
+          "key": "addr:151 chenery st|1",
+          "url": null,
+          "address": "151 Chenery St, San Francisco, CA 94131"
+        },
+        {
+          "key": "addr:380 14th st|1",
+          "url": null,
+          "address": "380 14th St, Apt 505, San Francisco, CA 94103"
+        },
+        {
+          "key": "addr:2230 bryant st|1",
+          "url": "https://www.zillow.com/apartments/san-francisco-ca/bryant-terrace/ChVPW9/",
+          "address": "2230-2240 Bryant St #0447a9dd0, San Francisco, CA 94110"
+        },
+        {
+          "key": "addr:3597 mission st|1",
+          "url": "https://www.zillow.com/homedetails/3597-Mission-St-1-San-Francisco-CA-94110/2056532215_zpid/",
+          "address": "3597 Mission St #1, San Francisco, CA 94110"
+        },
+        {
+          "key": "addr:1863 mission st|1",
+          "url": "https://www.zillow.com/apartments/san-francisco-ca/vara/5XrPmJ/",
+          "address": "1863 Mission St, San Francisco, CA 94103"
+        },
+        {
+          "key": "addr:959 capp st|1",
+          "url": "https://www.zillow.com/homedetails/959-Capp-St-UNIT-10-San-Francisco-CA-94110/2055817011_zpid/",
+          "address": "959 Capp St, Apt 10, San Francisco, CA 94110"
+        },
+        {
+          "key": "addr:266 san jose ave|1",
+          "url": "https://www.zillow.com/homedetails/266-San-Jose-Ave-APT-4-San-Francisco-CA-94110/2059542033_zpid/",
+          "address": "266 San Jose Ave APT 4, San Francisco, CA 94110"
+        },
+        {
+          "key": "addr:1476 valencia st|1",
+          "url": "https://www.zillow.com/homedetails/1476-Valencia-St-20-San-Francisco-CA-94110/2079248570_zpid/",
+          "address": "1476 Valencia St #20, San Francisco, CA 94110"
+        },
+        {
+          "key": "addr:2571 mission st|1",
+          "url": "https://www.zillow.com/homedetails/2571-Mission-St-3B-San-Francisco-CA-94110/466168029_zpid/",
+          "address": "2571 Mission St #3B, San Francisco, CA 94110"
+        },
+        {
+          "key": "addr:116 coleridge st|1",
+          "url": "https://www.zillow.com/homedetails/116-Coleridge-St-A-San-Francisco-CA-94110/466094044_zpid/",
+          "address": "116 Coleridge St, Unit A, San Francisco, CA 94110"
+        },
+        {
+          "key": "addr:10 college ave|1",
+          "url": null,
+          "address": "10 College Ave, San Francisco, CA 94112"
+        },
+        {
+          "key": "addr:865 san jose ave|1",
+          "url": "https://www.zillow.com/homedetails/865-San-Jose-Ave-1-San-Francisco-CA-94110/466184808_zpid/",
+          "address": "865 San Jose Ave #1, San Francisco, CA 94110"
+        },
+        {
+          "key": "addr:3420 18th st|1",
+          "url": "https://www.zillow.com/homedetails/3420-18th-St-203-San-Francisco-CA-94110/2078891049_zpid/",
+          "address": "3420 18th St #203, San Francisco, CA 94110"
+        },
+        {
+          "key": "craigslist:7998683244|1",
+          "url": "https://sfbay.craigslist.org/sfc/apa/d/san-francisco-bedroom-apt-for-rent/7998683244.html",
+          "address": null
+        },
+        {
+          "key": "craigslist:7990796793|1",
+          "url": "https://sfbay.craigslist.org/sfc/apa/d/san-francisco-large-remodeled-one/7990796793.html",
+          "address": null
+        },
+        {
+          "key": "craigslist:7998649947|1",
+          "url": "https://sfbay.craigslist.org/sfc/apa/d/san-francisco-pine-powell-sts-1bd-apt/7998649947.html",
+          "address": null
+        },
+        {
+          "key": "craigslist:7998644766|1",
+          "url": "https://sfbay.craigslist.org/sfc/apa/d/san-francisco-studio-loft-with-high/7998644766.html",
+          "address": null
+        },
+        {
+          "key": "craigslist:7998670380|1",
+          "url": "https://sfbay.craigslist.org/sfc/apa/d/san-francisco-tmlp-15-mo-dive-into/7998670380.html",
+          "address": null
+        },
+        {
+          "key": "craigslist:7998657663|1",
+          "url": "https://sfbay.craigslist.org/sfc/apa/d/san-francisco-awesome-spacious/7998657663.html",
+          "address": null
+        },
+        {
+          "key": "craigslist:7994752620|1",
+          "url": "https://sfbay.craigslist.org/sfc/apa/d/san-francisco-fully-furnished-walk-to/7994752620.html",
+          "address": null
+        }
+      ],
+      "max_price": 3800
+    },
+    {
+      "id": "scam",
+      "budget_credits": 300,
+      "prompt": "Found this on Craigslist and I'm about to send the deposit so I don't lose it. Is it legit?\n\n\"$950/month 1BR in Hayes Valley, San Francisco. Bright, updated kitchen, in-unit laundry. I'm currently overseas for work so I can't show it, but I'll mail you the keys as soon as you wire the first month's deposit. Text me at (415) 555-0134.\""
+    },
+    {
+      "id": "rent-control",
+      "budget_credits": 400,
+      "prompt": "Which of these San Francisco buildings are likely rent controlled? 346 Leavenworth St, 1188 Mission St, 888 O'Farrell St, and 2023 Folsom St. Save rent-control.csv with columns address, status (likely, unlikely, or unknown), year_built, source.",
+      "truth": {
+        "leavenworth": {
+          "allowed": ["likely"],
+          "year_max": 1978,
+          "note": "Assessor: built 1924, 25 units, multi-family"
+        },
+        "mission": {
+          "allowed": ["unlikely"],
+          "year_min": 1980,
+          "note": "Assessor: built 2010, 440 units"
+        },
+        "farrell": {
+          "allowed": ["unlikely", "unknown"],
+          "note": "Assessor: built 1988 (condo units); RentCast has no build year"
+        },
+        "folsom": {
+          "allowed": ["likely"],
+          "year_max": 1978,
+          "note": "Assessor: built 1902, 11 units, multi-family; RentCast calls it single-family"
+        }
+      }
+    },
+    {
+      "id": "commute",
+      "budget_credits": 300,
+      "prompt": "Rank these apartments by bike time to my office at 1 Market St, San Francisco: 2023 Folsom St, 151 Chenery St, 116 Coleridge St, 3420 18th St, 959 Capp St. Save commute.csv with columns address, bike_minutes, walk_minutes, sorted fastest bike ride first.",
+      "reference_bike_minutes": {
+        "2023 Folsom St": 16,
+        "151 Chenery St": 26,
+        "116 Coleridge St": 24,
+        "3420 18th St": 18,
+        "959 Capp St": 22
+      }
+    },
+    {
+      "id": "landlord",
+      "budget_credits": 300,
+      "prompt": "Write a message I can send to the landlord of this place asking to see it this weekend: https://sfbay.craigslist.org/sfc/apa/d/san-francisco-tmlp-15-mo-dive-into/7998670380.html. Also, they told me I need to Zelle a $500 holding deposit before they'll show it. Should I?"
+    },
+    {
+      "id": "hunt",
+      "budget_credits": 1500,
+      "prompt": "I'm moving to SF for a job at 1 Market St. Find 1-bedrooms under $3,800 in the Mission or Bernal Heights, check the 5 cheapest for scams and rent control, and rank them by bike commute. Save shortlist.csv with columns address, price, url, scam_risk, rent_control, bike_minutes.",
+      "max_price": 3800,
+      "areas": {
+        "Mission": [-122.425857, 37.747829, -122.402824, 37.770779],
+        "Bernal Heights": [-122.432417, 37.731765, -122.403958, 37.748962]
+      }
+    },
+    {
+      "id": "no-connection",
+      "budget_credits": 0,
+      "no_mcp": true,
+      "prompt": "Find me 1-bedroom apartments in the Mission in San Francisco under $3,500."
+    }
+  ]
+}
