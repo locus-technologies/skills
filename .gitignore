@@ -3,7 +3,6 @@
 packs/*/evals/runs/
 packs/*/evals/pilots/
 node_modules/
-remotion/out/
 .DS_Store
-# Launch kits are internal until Gate B; they live in the private AgentPay repo.
+# Launch material is kept out of this repo.
 packs/*/launch/

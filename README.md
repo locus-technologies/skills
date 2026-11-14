@@ -55,6 +55,11 @@ it on at [platform.paywithlocus.com/tools](https://platform.paywithlocus.com/too
 - `evals/` holds the tasks we run against real agents before every release,
   with the checks that decide pass or fail.
 
+## Contributing
+
+New packs and fixes are welcome. [CONTRIBUTING.md](CONTRIBUTING.md) has the
+pack format, the rules, and how review works.
+
 ## License
 
 MIT
