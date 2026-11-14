@@ -564,6 +564,9 @@ export function fromRent(body: unknown, city: string): Listing[] {
   });
 }
 
+/** Zillow gives some buildings a placeholder unit ("316 Valencia St #2a1f3d265, ..."); property lookups 404 on it. */
+export const zillowAddress = (address: string | null) => address?.replace(/\s*#[0-9a-f]{8,}(?=,|$)/i, '') ?? null;
+
 export function fromZillow(body: unknown, city: string): Listing[] {
   const d = parsePayload(body);
   const abs = (u: string | null) => (u ? (u.startsWith('http') ? u : `https://www.zillow.com${u}`) : null);
@@ -572,7 +575,7 @@ export function fromZillow(body: unknown, city: string): Listing[] {
   for (const raw of [...arr(d.listings), ...arr(d.mapResults)]) {
     const r = obj(raw);
     const home = obj(obj(r.hdpData).homeInfo);
-    const address = str(r.address);
+    const address = zillowAddress(str(r.address));
     const url = abs(str(r.detailUrl));
     const where = str(r.addressCity) ?? str(home.city) ?? address?.split(',').slice(-2, -1)[0] ?? null;
     if (!sameCity(where, city) || !url) continue;

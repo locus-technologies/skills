@@ -4,7 +4,7 @@ description: Rental apartment search and listing checks. Load it before answerin
 license: MIT
 metadata:
   author: locus
-  version: "0.1.0"
+  version: "0.1.1"
   homepage: https://github.com/locus-technologies/skills
 ---
 

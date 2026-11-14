@@ -187,7 +187,7 @@ export default function runFixtures() {
         listings: [
           {
             isBuilding: true,
-            address: '1188 Mission St, San Francisco, CA',
+            address: '1188 Mission St #5c1e9a2f0, San Francisco, CA',
             addressCity: 'San Francisco',
             buildingName: 'Trinity',
             detailUrl: '/apartments/sf/trinity/5X/',
@@ -223,6 +223,11 @@ export default function runFixtures() {
   assert(
     zl.length === 2 && zl[0].price === 3574 && zl[0].url === 'https://www.zillow.com/apartments/sf/trinity/5X/',
     'zillow units, map overlap, city',
+  );
+  assert(
+    zl[0].address === '1188 Mission St, San Francisco, CA' &&
+      zl[1].address === '1735 Van Ness Ave APT 601, San Francisco, CA 94109',
+    'zillow placeholder unit dropped, real unit kept',
   );
   cases.push('normalizers');
 
